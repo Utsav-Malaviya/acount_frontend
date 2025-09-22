@@ -1,0 +1,190 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+/* Responsive dashboard styles */
+.container {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+}
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.headerTitleWrap { width: 100%; text-align: center; }
+.headerTitle { font-size: 24px; font-weight: 800; text-align: center; }
+.headerSub { color: #6b7280; text-align: center; margin-top: 2px; }
+.headerActions { display: flex; align-items: center; gap: 12px; justify-content: center; }
+.headerGreeting { color: #555; }
+.logoutBtn { padding: 8px 12px; border: 1px solid #6b7280; background: #6b7280; color: #fff; border-radius: 8px; cursor: pointer; }
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 20px;
+}
+.card {
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #fff;
+}
+.cardHeader {
+  padding: 16px 20px;
+  border-bottom: 1px solid #f1f5f9;
+  font-weight: 700;
+}
+.cardBody {
+  padding: 20px;
+}
+.mainGrid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 20px;
+}
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  align-items: end;
+}
+.entryRow {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+/* Unified form controls */
+.cardBody label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.cardBody input[type="text"],
+.cardBody input[type="number"],
+.cardBody input[type="datetime-local"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+.cardBody .formGrid > div[style*="grid-column: span 2"] {
+  margin-top: 2px;
+}
+.cardBody .formGrid > div:last-child {
+  margin-top: 6px;
+}
+
+/* Type selector big buttons */
+.typeButtons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.typeButton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 1px solid #e5e7eb;
+  font-weight: 700;
+  background: #f8fafc;
+}
+.typeButton span {
+  font-size: 18px;
+}
+.typeCredit {
+  color: #14532d;
+}
+.typeDebit {
+  color: #7f1d1d;
+}
+.typeActive {
+  outline: 2px solid #0d6efd;
+  background: #eef2ff;
+}
+
+@media (max-width: 900px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .headerTitle { width: 100%; text-align: center; }
+  .headerActions { width: 100%; display: flex; justify-content: space-between; }
+  .logoutBtn { padding: 10px 14px; }
+  .mainGrid {
+    grid-template-columns: 1fr;
+  }
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+  .typeButtons {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 12px;
+  }
+  .headerTitle { font-size: 20px; }
+  .headerSub { font-size: 12px; }
+  .headerGreeting { font-size: 14px; }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Truncate note so history stays in one row on small screens */
+.entryNote {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
