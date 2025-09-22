@@ -1,7 +1,9 @@
+const API_BASE = process.env.REACT_APP_API_BASE || '';
+
 export async function api(path, { method = 'GET', body, token } = {}) {
   const headers = { 'Content-Type': 'application/json' };
   if (token) headers['Authorization'] = `Bearer ${token}`;
-  const url = `/api${path}`;
+  const url = `${API_BASE}/api${path}`.replace(/\/+api/, '/api');
   let res;
   try {
     res = await fetch(url, {
